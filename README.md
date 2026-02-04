@@ -33,4 +33,3 @@ The project studies the effectiveness of monetary policy before, during, and aft
 - src/         scripts and models
 - results/     outputs and figures
 - paper/       final dissertation
-  └── TFG-ECOEST_Sastre_2025.pdf
