@@ -33,3 +33,14 @@ The project studies the effectiveness of monetary policy before, during, and aft
 - src/         scripts and models
 - results/     outputs and figures
 - paper/       final dissertation
+
+## Requirements
+R 4.5.2
+Matlab R2025a
+Microsoft Excel
+
+## Data
+Some datasets are not public due to licensing restrictions.
+
+## License
+MIT License
