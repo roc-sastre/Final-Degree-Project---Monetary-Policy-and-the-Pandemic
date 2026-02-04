@@ -35,9 +35,9 @@ The project studies the effectiveness of monetary policy before, during, and aft
 - paper/       final dissertation
 
 ## Requirements
-R 4.5.2
-Matlab R2025a
-Microsoft Excel
+- R 4.5.2
+- Matlab R2025a
+- Microsoft Excel
 
 ## Data
 Some datasets are not public due to licensing restrictions.
