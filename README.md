@@ -5,6 +5,8 @@ This repository contains the code and materials for my final dissertation for th
 
 The project studies the effectiveness of monetary policy before, during, and after COVID-19 in the euro area and the United States using Structural Vector Autoregression (SVAR) models with sign restrictions, grounded in a New Keynesian framework.
 
+📄 Full dissertation: [FP-ECOEST_Sastre_2025.pdf](paper/FP-ECOEST_Sastre_2025.pdf)
+
 ## Research Goals
 
 - Evaluate how monetary policy transmission changed across periods:
