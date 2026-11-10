@@ -1,5 +1,5 @@
 % 1. Set working directory
-cd('C:\Users\rocsa\Desktop\Universitat\TFG\Data');
+cd(fullfile(fileparts(mfilename('fullpath')), '..', 'data'));
 
 % 2. Create and run each BEAR model
 
