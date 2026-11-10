@@ -1,6 +1,5 @@
 # Paquets ----------------------------------------------------------------------
 
-install.packages(c("R.matlab","ggplot2","gridExtra","tidyr","dplyr"))
 library(R.matlab)
 library(ggplot2)
 library(gridExtra)
@@ -135,7 +134,7 @@ draw_combined_irfs_per_variable <- function(results_list, variable, save_dir) {
 }
 
 # Bucle per generar els 3 arxius
-save_dir <- "C:/Users/rocsa/Desktop/Universitat/TFG/Gràfics"
+save_dir <- file.path("results", "figures")
 variables <- c("Interest Rate", "Inflation", "Output Gap")
 
 for (var in variables) {
@@ -311,7 +310,7 @@ draw_combined_hd_per_variable <- function(results_list, variable, save_dir) {
 }
 
 # Bucle per generar els 3 arxius HD
-save_dir <- "C:/Users/rocsa/Desktop/Universitat/TFG/Gràfics"
+save_dir <- file.path("results", "figures")
 variables <- c("Interest Rate", "Inflation", "Output Gap")
 
 # Assegurar que el directori existeix
