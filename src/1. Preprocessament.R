@@ -1,6 +1,5 @@
 # Paquets ----------------------------------------------------------------------
 
-install.packages(c("fredr", "eurostat", "ecb", "dplyr", "tidyr", "lubridate"))
 library(fredr)
 library(eurostat)
 library(ecb)
@@ -14,10 +13,12 @@ library(tempdisagg)
 # ------------------------------------------------------------------------------
 # Setup ------------------------------------------------------------------------
 
-fredr_set_key("58e782b2afa6ed9b66ec749d3e91558f")
+fred_key <- Sys.getenv("FRED_API_KEY")
+if (!nzchar(fred_key)) stop("Set FRED_API_KEY in your environment before running this script.")
+fredr_set_key(fred_key)
 start_date <- as.Date("2014-01-01")
-path <- "C:/Users/rocsa/Desktop/Universitat/TFG/Data"
-setwd(path)
+data_dir <- "data"
+dir.create(data_dir, showWarnings = FALSE, recursive = TRUE)
 
 # ------------------------------------------------------------------------------
 # Obtenció de les dades --------------------------------------------------------
@@ -141,6 +142,6 @@ eu_output <- eu_output %>%
 rm(eu_trend_data, eu_trend_model, us_trend_data, us_trend_model)
 
 save(eonia, estr, eu_prices, eu_output, us_prices, us_output,
-     us_rate, path, file = "1.RData")
+     us_rate, file = file.path(data_dir, "1.RData"))
 
 # ------------------------------------------------------------------------------
