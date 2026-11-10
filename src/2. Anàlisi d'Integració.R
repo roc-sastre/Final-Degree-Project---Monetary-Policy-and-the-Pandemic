@@ -1,7 +1,5 @@
 # Paquets ----------------------------------------------------------------------
 
-install.packages(c("urca", "tseries", "dplyr", "tidyverse","writexl","zoo",
-                   "tibble"))
 library(urca)
 library(tseries)
 library(dplyr)
@@ -14,7 +12,7 @@ library(tibble)
 # ------------------------------------------------------------------------------
 # Creació d'un data.frame amb totes les dades combinades -----------------------
 
-load("1.RData")
+load(file.path("data", "1.RData"))
 
 df_names <- c("eonia", "estr", "eu_prices", "eu_output", 
               "us_prices", "us_output", "us_rate")
@@ -370,7 +368,7 @@ for (name in names(data_list)) {
       `FEVD res periods` = FEVD_period_sheet_df
       
     ),
-    path = paste0(name, ".xlsx")
+    path = file.path("data", paste0(name, ".xlsx"))
   )
 }
 
