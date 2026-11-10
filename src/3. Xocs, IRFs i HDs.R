@@ -1,6 +1,5 @@
 # Paquets ----------------------------------------------------------------------
 
-install.packages(c("R.matlab","ggplot2","gridExtra","tidyr","dplyr"))
 library(R.matlab)
 library(ggplot2)
 library(gridExtra)
@@ -17,7 +16,7 @@ file_names <- c(
   "results_1_us.mat", "results_2_us.mat", "results_3_us.mat"
 )
 
-results_list <- lapply(file_names, readMat)
+results_list <- lapply(file.path("data", "model_outputs", file_names), readMat)
 names(results_list) <- tools::file_path_sans_ext(file_names)
 
 rm(file_names)
@@ -67,7 +66,7 @@ plot_shock_region <- function(shock_df, region_label,
 }
 
 # Directori per guardar (canvia-ho si cal)
-save_dir <- "C:/Users/rocsa/Desktop/Universitat/TFG/Gràfics"
+save_dir <- file.path("results", "figures")
 dir.create(save_dir, showWarnings = FALSE, recursive = TRUE)
 
 # Regions i períodes (assumim la mateixa convenció que abans: results_1_us, results_2_eu, ...)
@@ -226,7 +225,7 @@ draw_irfs_variable_economy <- function(results_list, economy, variable, save_dir
 
 # Bucle per generar plots per cada combinació variable x economia (igual que abans)
 # Assegura't que save_dir existeix i results_list està carregat
-save_dir <- "C:/Users/rocsa/Desktop/Universitat/TFG/Gràfics"
+save_dir <- file.path("results", "figures")
 variables <- c("Interest Rate", "Inflation", "Output Gap")
 economies <- c("eu", "us")
 
